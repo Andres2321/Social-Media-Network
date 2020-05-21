@@ -7,6 +7,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const config = require("config");
 
+
 // GET api/auth
 router.get("/", auth, async (req, res) => {
   try {
@@ -18,8 +19,8 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
-// POST api/auth
 
+// POST api/auth
 router.post(
   "/",
   [
@@ -66,7 +67,7 @@ router.post(
           res.json({ token });
         }
       );
-    } catch (err) {
+    }catch (err) {
       console.error(err.message);
       res.status(500).send("server error");
     }
